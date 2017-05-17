@@ -151,7 +151,7 @@ ENV/
 .ropeproject
 /internship-env/
 /.git/
-docker-compose.override.yml
-docker-compose.yml
-.dockerignore
-Dockerfile
+/docker-compose.override.yml
+/docker-compose.yml
+/.dockerignore
+/Dockerfile
