@@ -43,11 +43,23 @@ repo and add it to the directory containing this repository. For example:
   * OSX: `ln -s ~/User/<user name>/<gdrive>/notebooks/internship2017 notebooks`
   * Windows: `mklink \D <C:/drive/notebooks/internship2017> notebooks`
   
-### Start notebook server
+### Configure .env
+
+Make a copy of the `example.env` file named `.env` and update the environmental variable `GDRIVE_NOTEBOOKS_DIRECTORY`
+with the full path to your local storage directory. I'm using Google Drive on OSX with a symlink to 'gdrive' so my entry
+looks like this:
+    
+    GDRIVE_NOTEBOOKS_DIRECTORY=/Users/gonzo/gdrive/DesktopSync/notebooks/internship2017
   
-    $ docker-compose up -d # start a notebook server in the background
+### Start notebook server
+ 
+    
+    # start a notebook server in the background    
+    $ docker-compose up -d 
+   
     # get the link to your local notebook server
     $ docker-compose logs # e.g. http://0.0.0.0:8888/?token=3bd3dd53b2804cfc1ca4d18997f3eb7ab4906598a48f9df4
-    # to excit from logs use 'ctl-c'
+  
+    # to exit from logs use 'ctl-c'
     $ docker-compose down # stop the notebook server
     
