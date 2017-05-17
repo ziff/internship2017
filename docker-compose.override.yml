@@ -1,0 +1,5 @@
+version: '2'
+
+services:
+  notebook-server:
+    image: ziff/notebook:latest
