@@ -6,6 +6,4 @@ services:
     build: .
     ports:
       - 8888:8888
-    volumes:
-      - ./:/home/jovyan/work
     command: notebook --port=8888 --ip=0.0.0.0

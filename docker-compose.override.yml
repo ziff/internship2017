@@ -3,3 +3,7 @@ version: '2'
 services:
   notebook-server:
     image: ziff/notebook:latest
+    volumes:
+      - $GDRIVE_NOTEBOOKS_DIRECTORY:/home/jovyan/mynotebooks
+      - ./Challenges:/home/jovyan/Challenges
+      - ./Concepts:/home/jovyan/Concepts

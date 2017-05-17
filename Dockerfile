@@ -8,6 +8,7 @@ RUN cd /opt && git clone --recursive https://github.com/dmlc/xgboost && \
 USER $NB_USER
 RUN conda config --system --set auto_update_conda false && \
     conda env update --file=/tmp/environment.yml
+RUN rm -rf /home/jovyan/work
 WORKDIR $HOME
 
 ENTRYPOINT ["jupyter"]
