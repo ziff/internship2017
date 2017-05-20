@@ -62,4 +62,27 @@ looks like this:
   
     # to exit from logs use 'ctl-c'
     $ docker-compose down # stop the notebook server
+### For Windows Users Follow these steps
+
+    # Download Google Drive on your desktop. Let it sync all the files. After it's done syncing do this:
+    
+    First,
+    Create a symlink for Google Drive on you desktop
+    mklink /D <Link> <Target>
+    Here, Target is the folder that exists
+    Example : mklink /D "C:/Users/thakk/gdrive" "C:/Users/thakk/Google Drive"
+    
+    Second,
+    Create a symlink of the cloned repo with the folder in gdrive named "notebooks"
+    Example: mklink /D "C:\Users\thakk\gdrive\notebooks" "E:\internship2017"
+    
+    Third,
+    Now a file named 'example.env' is present. Considering the above example change it's content to 
+    'GDRIVE_NOTEBOOKS_DIRECTORY=/Users/thakk/gdrive/notebooks/'
+    After doing this rename 'example.env' to just '.env'
+    
+    Fourth,
+    Just use docker-compose up -d
+    
+    You should be good to go!
     
