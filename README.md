@@ -6,7 +6,9 @@ Welcome to ZIFF, Inc. Summer Internship 2017!
 
 Download and install the following:
 
-  * [Docker Community Edition](https://www.docker.com/community-edition#/download)
+  * Docker
+    * Mac or Windows Pro: [Docker Community Edition](https://www.docker.com/community-edition#/download)
+    * Windows Home Edition: [Docker Toolbox](https://www.docker.com/products/docker-toolbox)
   * Python 3.6.1
     * OSX: [brew](https://brew.sh/) install python3
     * Windows: [Python 3.6.1](https://www.python.org/downloads/)
@@ -16,42 +18,67 @@ Download and install the following:
   * git large file system
     * OSX: [git-lfs](https://git-lfs.github.com/)
     * Windows: [git-lfs](https://git-lfs.github.com/)
+  * [Google Drive](https://www.google.com/drive/download/)
+    * You can sync all of your Google Drive or just create a "MyNotebooks" folder and sync only that when you setup Google Drive
   
 ## Setup
 
 ### Clone this project:
 
-    $ git clone git@github.com:ziff/internship2017.git
+    $ git clone https://github.com/ziff/internship2017.git
 
-### Link notebooks directory
+### Setup Google Drive
 
 We recommend storing your personal notebooks in [Google Drive](https://www.google.com/drive/download/) 
-or [Dropbox](https://www.dropbox.com/). Configure this by creating a place for notebooks and projects if you wish inside
-your local sychronized storage directory. For example from OSX Terminal:
+or [Dropbox](https://www.dropbox.com/). Configure this by creating a place for notebooks and if you like project subdirectories.
 
-    $ cd ~/Google\ Drive/
-    $ mkdir -p notebooks/internship2017
-    
 Because whitespace in a directory name or filename is a not supported in Docker volumes create a symlink for your 
 Google Drive directory if you are using Google Drive. e.g. from your home directory:
 
-    $ ln -s Google\ Drive gdrive # creates a symbolic link called 'gdrive'
-    
-Now from within this project create a symbolic link to for your notebooks directory or project directory inside this
-repo and add it to the directory containing this repository. For example:
+OSX or Windows [git bash or Docker Quickstart Terminal] or Linux:
 
-  * OSX: `ln -s ~/User/<user name>/<gdrive>/notebooks/internship2017 notebooks`
-  * Windows: `mklink \D <C:/drive/notebooks/internship2017> notebooks`
-  
+    $ ln -s Google\ Drive gdrive # creates a symbolic link called 'gdrive'
+
+Windows Pro or Home Edition [CMD as administrator]:
+
+    C:\Users\gonzo>mklink /D "C:\Users\<username>\gdrive" "C:\<username>\Google Drive"
+
+Finally, create a directory or project directory in your Google Drive for your notebooks. For example you could make a directory
+
+### Link notebooks directory
+
+Now from this project directory:
+
+OSX or Windows [git bash or Docker Quickstart Terminal] or Linux:
+
+    $ cd internship2017
+    $ ln -s /Users/gonzo/gdrive/MyNotebooks/internship2017 notebooks # this will create a link called notebooks in your project directory
+
+Windows Pro or Home Edition [CMD as administrator]:
+
+    C:\Users\gonzo\Projects\internship2017>mklink /D notebooks "C:\Users\gonzo\Google Drive\MyNotebooks\intership2017"
+    
 ### Configure .env
 
-Make a copy of the `example.env` file named `.env` and update the environmental variable `GDRIVE_NOTEBOOKS_DIRECTORY`
+Make a copy of the `example.env` file and rename the copy `.env` and update the environmental variable `GDRIVE_NOTEBOOKS_DIRECTORY`
 with the full path to your local storage directory. I'm using Google Drive on OSX with a symlink to 'gdrive' so my entry
 looks like this:
+
+OSX or Linux:
     
-    GDRIVE_NOTEBOOKS_DIRECTORY=/Users/gonzo/gdrive/DesktopSync/notebooks/internship2017
+    GDRIVE_NOTEBOOKS_DIRECTORY=/Users/gonzo/gdrive/MyNotebooks/internship2017
+
+Windows Home Edition:
+
+    GDRIVE_NOTEBOOKS_DIRECTORY=/c/Users/gonzo/gdrive/MyNotebooks/internship2017
+
+Windows Pro:
+
+    * If you are running Windows Pro with Docker CE native then you can configure natural Windows [paths](https://rominirani.com/docker-on-windows-mounting-host-directories-d96f3f056a2c)
+
+You need to do this so that Docker can find your notebooks directory. It will not work if you try and point Docker to your local symbolic link.
   
-### Start notebook server
+## Start notebook server
  
     
     # start a notebook server in the background    
