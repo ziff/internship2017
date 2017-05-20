@@ -74,7 +74,7 @@ Windows Home Edition:
 
 Windows Pro:
 
-    * If you are running Windows Pro with Docker CE native then you can configure natural Windows [paths](https://rominirani.com/docker-on-windows-mounting-host-directories-d96f3f056a2c)
+  * If you are running Windows Pro with Docker CE native then you can configure natural Windows [paths](https://rominirani.com/docker-on-windows-mounting-host-directories-d96f3f056a2c)
 
 You need to do this so that Docker can find your notebooks directory. It will not work if you try and point Docker to your local symbolic link.
   
