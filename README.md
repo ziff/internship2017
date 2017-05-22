@@ -80,12 +80,19 @@ You need to do this so that Docker can find your notebooks directory. It will no
   
 ## Start notebook server
  
-    
     # start a notebook server in the background    
     $ docker-compose up -d 
    
     # get the link to your local notebook server
+    # if you are using Windows HE make sure to get the correct IP addres
     $ docker-compose logs # e.g. http://0.0.0.0:8888/?token=3bd3dd53b2804cfc1ca4d18997f3eb7ab4906598a48f9df4
+    
+    # if you are using Windows HE then docker creates an isolated virtual machine using 'docker-machine' 
+    # this means you need to find out the IP address of that isolated virtual machine and you can do that with
+    # Windows HE only
+    # docker-machine ip
+    # 192.168.99.100
+    # docker-compose logs # e.g. http://<IP address above>:8888/?token=3bd3dd53b2804cfc1ca4d18997f3eb7ab4906598a48f9df4
   
     # to exit from logs use 'ctl-c'
     $ docker-compose down # stop the notebook server
