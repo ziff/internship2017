@@ -7,3 +7,6 @@ services:
       - $GDRIVE_NOTEBOOKS_DIRECTORY:/home/jovyan/mynotebooks
       - ./Challenges:/home/jovyan/Challenges
       - ./Concepts:/home/jovyan/Concepts
+    ports:
+      - 8888:8888
+    command: notebook --port=8888 --ip=0.0.0.0
