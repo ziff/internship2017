@@ -96,4 +96,10 @@ You need to do this so that Docker can find your notebooks directory. It will no
   
     # to exit from logs use 'ctl-c'
     $ docker-compose down # stop the notebook server
-    
+
+# Development
+
+If you are doing development on this project create a virtual environment and install development dependencies.
+
+  * `python -m venv .venv`
+  * `pip install -r requirements.txt`
