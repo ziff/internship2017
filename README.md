@@ -8,6 +8,31 @@ To submit a solution or effort for a challenge task fork this project and create
 [pull request](https://help.github.com/articles/creating-a-pull-request/) following the pull request template found in 
 `pr-template.md`.
 
+## What about XYZ library?
+
+If you would like to add libraries to the `notebook-server` you can do so by creating one or two files:
+
+To add files with `conda`:
+  
+  1. Make a file named `./docker/my-environment.yml`
+  1. Add something like the following:
+  
+    # my-environment.yml
+    name: root
+    channels:
+        - conda-forge
+        - defaults
+    dependencies:
+        - my-favorite-library=1.0.0
+        
+To add files with `pip`:
+
+  1. Make a file named `./docker/my-requirements.txt`
+  1. Add something like the following:
+  
+    # my-requirements.txt
+    my-favorite-library
+
 ## Dependencies
 
 Download and install the following:
