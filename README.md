@@ -2,6 +2,12 @@
 
 Welcome to ZIFF, Inc. Summer Internship 2017!
 
+## Challenge submission
+
+To submit a solution or effort for a challenge task fork this project and create a 
+[pull request](https://help.github.com/articles/creating-a-pull-request/) following the pull request template found in 
+`pr-template.md`.
+
 ## Dependencies
 
 Download and install the following:
