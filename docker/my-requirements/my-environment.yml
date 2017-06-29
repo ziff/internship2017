@@ -1,0 +1,6 @@
+name: root
+channels:
+- conda-forge
+- defaults
+dependencies:
+- boto3=1.4.4=py36_0

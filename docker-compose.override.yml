@@ -9,4 +9,7 @@ services:
       - ./Concepts:/home/jovyan/Concepts
     ports:
       - 8888:8888
-    command: sh run.sh
+    environment:
+      - AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
+      - AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
+      - AWS_DEFAULT_REGION=$AWS_DEFAULT_REGION

@@ -5,3 +5,5 @@ services:
     image: ziff/notebook:latest
     build:
       context: ./docker
+      args:
+        - REQS_DIR=$REQS_DIR
